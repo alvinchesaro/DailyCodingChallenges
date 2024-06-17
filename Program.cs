@@ -4,20 +4,32 @@ class Solution
 {
     public static bool checkSummationOfTwoNumber(int[] nums, int target)
     {
-        for (int i = 0; i < nums.Length - 1; i++)
+        
+        if (nums != null)
         {
-            for (int j = i + 1; j < nums.Length; j++)
+            // Loop through the List
+            for (int i = 0; i < nums.Length - 1; i++)
             {
-                int d = nums[i];
-                int c = nums[j];
-                int b = d + c;
-                if (b == target)
+                // Set Up a Second Loop that Increments the Index of the Second Number
+                for (int j = i + 1; j < nums.Length; j++)
                 {
-                    return true;
+                    // Store The Number
+                    int d = nums[i];
+                    // Next Number in Array
+                    int c = nums[j];
+                    // Sum the Two Numbers
+                    int b = d + c;
+                    // Compare with target
+                    if (b == target)
+                    {
+                        // return value
+                        return true;
+                    }
                 }
             }
         }
-
+        
+        // If you reached here, the sum could not be compared with your target
         return false;
     }
 
